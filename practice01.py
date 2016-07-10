@@ -1,9 +1,3 @@
-# PART TWO
-
-# 1. (a) Write a function, `is_berry()`, which takes a fruit name as a string
-#        and returns a boolean if the fruit is a "strawberry", "cherry", or 
-#        "blackberry".
-
 #    (b) Write another function, shipping_cost(), which calculates shipping cost
 #        by taking a fruit name as a string, calling the `is_berry()` function 
 #        within the `shipping_cost()` function and returns `0` if ``is_berry()
@@ -28,4 +22,11 @@ def is_berry(fruit_name):
     else:
         return False
 
-print is_berry("blackberry")
+def shipping_cost(fruit_name):
+    if type(fruit_name) == str:
+        if is_berry(fruit_name) == True:
+            return "0"
+        elif is_berry(fruit_name) == False:
+            return "5"
+
+print shipping_cost("berry") 

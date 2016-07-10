@@ -42,6 +42,13 @@ def is_berry(fruit_name):
 #        within the `shipping_cost()` function and returns `0` if ``is_berry()
 #        == True``, and `5` if ``is_berry() == False``.
 
+def shipping_cost(fruit_name):
+    if type(fruit_name) == str:
+        if is_berry(fruit_name) == True:
+            return "0"
+        elif is_berry(fruit_name) == False:
+            return "5"
+
 # 2. (a) Write a function, `is_hometown()`, which takes a town name as a string
 #        and evaluates to `True` if it is your hometown, and `False` otherwise.
 #
