@@ -31,16 +31,15 @@ def item_cost(cost, state_name, tax = 0.05):
 # 1. (a) Write a function, `is_berry()`, which takes a fruit name as a string
 #        and returns a boolean if the fruit is a "strawberry", "cherry", or 
 #        "blackberry".
+#    (b) Write another function, shipping_cost(), which calculates shipping cost
+#        by taking a fruit name as a string, calling the `is_berry()` function 
+#        within the `shipping_cost()` function and returns `0` if ``is_berry()
+#        == True``, and `5` if ``is_berry() == False``.
 def is_berry(fruit_name):
     if type(fruit_name) == str and fruit_name == "strawberry" or fruit_name == "cherry" or fruit_name == "blackberry":
         return True
     else:
         return False
-
-#    (b) Write another function, shipping_cost(), which calculates shipping cost
-#        by taking a fruit name as a string, calling the `is_berry()` function 
-#        within the `shipping_cost()` function and returns `0` if ``is_berry()
-#        == True``, and `5` if ``is_berry() == False``.
 
 def shipping_cost(fruit_name):
     if type(fruit_name) == str:
@@ -62,6 +61,26 @@ def shipping_cost(fruit_name):
 #        we're from the same place!", or "Hi 'full name here', where are you 
 #        from?" depending on what `is_hometown()` evaluates to.
 
+def is_hometown(town_name):
+    if type(town_name) == str:
+        if town_name == "Walnut":
+            return True
+        else:
+            return False
+
+def full_name(first_name, last_name):
+    if type(first_name) == str and type(last_name) == str:
+        return first_name + " " + last_name
+
+def hometown_greeting(home_town, first_name, last_name):
+    if is_hometown(home_town) == True:
+        user_greeting = "Hi, " + full_name(first_name, last_name) + ", " + \
+        "we're from the same place!"
+    elif is_hometown(home_town) == False:
+        user_greeting = "Hi, " + full_name(first_name, last_name) + ", " + \
+        "where are you from?"
+    print user_greeting
+
 #####################################################################
 
 # PART THREE
@@ -75,5 +94,20 @@ def shipping_cost(fruit_name):
 
 # 3. Make a function that takes in a number and a list of numbers. It should append
 #    the number to the list of numbers and return the list.
+
+def increment(x= 1):
+    def add(y):
+        return x * y
+    return add
+
+
+addfive = increment(5)
+addfive(5)
+addfive(20)
+
+def add_numbers(numbers_list, num):
+    if type(numbers_list) == list:
+        numbers_list.append(num)
+    return numbers_list
 
 #####################################################################
