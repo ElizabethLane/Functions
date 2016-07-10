@@ -14,14 +14,15 @@
 
 #    If the user does not provide a tax rate it should default to 5% 
 
-def item_cost(cost, state_name, tax = 0.05):
+def total_item_cost(cost, state_name, tax = 0.05):
     if state_name == "CA":
         tax = 0.07
-        item_with_tax = cost * tax
+        item_with_tax = cost + cost * tax
     else:
-        item_with_tax = cost * tax
+        item_with_tax = cost + cost * tax
 
     return item_with_tax
+
 
 
 
@@ -81,6 +82,7 @@ def hometown_greeting(home_town, first_name, last_name):
         "where are you from?"
     print user_greeting
 
+
 #####################################################################
 
 # PART THREE
@@ -95,9 +97,9 @@ def hometown_greeting(home_town, first_name, last_name):
 # 3. Make a function that takes in a number and a list of numbers. It should append
 #    the number to the list of numbers and return the list.
 
-def increment(x= 1):
+def increment(x = 1):
     def add(y):
-        return x * y
+        return x + y
     return add
 
 
@@ -109,5 +111,7 @@ def add_numbers(numbers_list, num):
     if type(numbers_list) == list:
         numbers_list.append(num)
     return numbers_list
+
+
 
 #####################################################################
